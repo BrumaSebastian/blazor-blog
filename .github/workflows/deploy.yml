@@ -30,13 +30,13 @@ jobs:
         dotnet-version: '9.0.x'  # Change to your .NET version (6.0.x, 7.0.x, 8.0.x, etc.)
 
     - name: Restore dependencies
-      run: dotnet restore ./BlazorBlog/BlazorBlog.csproj
+      run: dotnet restore ./BlazorBlog/BlazorBlog.slnx
 
     - name: Build
-      run: dotnet build ./BlazorBlog/BlazorBlog.csproj --configuration Release --no-restore
+      run: dotnet build ./BlazorBlog/BlazorBlog.slnx --configuration Release --no-restore
 
     - name: Publish
-      run: dotnet publish ./BlazorBlog/BlazorBlog.csproj -c Release -o release --nologo
+      run: dotnet publish ./BlazorBlog/BlazorBlog.slnx -c Release -o release --nologo
 
     - name: Change base-tag in index.html
       run: |
